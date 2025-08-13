@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>ITMasterPro.com.au</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Presento - v3.9.1
+  * Template URL: https://bootstrapmade.com/presento-bootstrap-corporate-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+
+
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top d-flex align-items-center">
+  <div class="container d-flex align-items-center">
+    
+    <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt=""></a>
+
+    
+    
+    
+    <nav id="navbar" class="navbar order-last order-lg-0">
+      <ul>
+        <li><a class="nav-link scrollto" href="index.html">Home</a></li>
+        <li><a class="nav-link scrollto" href="index.html#about">About</a></li>
+        <li><a class="nav-link scrollto" href="index.html#csp">CSP</a></li>
+        <li><a class="nav-link scrollto" href="index.html#services">Why We?</a></li>
+        <li><a class="nav-link scrollto" href="index.html#value">Value</a></li>
+        <li><a class="nav-link scrollto" href="index.html#success">Success Stories</a></li>
+        <li><a class="nav-link scrollto" href="index.html#team">FaQ</a></li>
+        <li><a class="nav-link scrollto" href="index.html#contact">Enquiry</a></li>
+        <li><a class="active" href="blog.html">Blog</a></li>
+      </ul>
+
+      
+
+      <i class="bi bi-list mobile-nav-toggle"></i>
+    </nav><!-- .navbar -->
+    
+    
+  </div>
+</header><!-- End Header -->
+
+
+
+  <main id="main">
+
+   <!-- ======= Breadcrumbs ======= -->
+   <section class="breadcrumbs">
+    <div class="container"><br>
+      <ol>
+        <li><a href="index.html">Home</a></li>
+        <li>Blog</li>
+      </ol>
+      <h2>Learning Latest</h2>
+
+    </div>
+  </section><!-- End Breadcrumbs -->
+
+      <!-- ======= Blog Single Section ======= -->
+          <section id="blog" class="blog">
+              <div class="container" data-aos="fade-up">
+      
+                  <div class="row">
+      
+                      <div class="col-lg-12 entries">
+      
+                          <article class="entry entry-single">
+      
+                              <div class="entry-img">
+                                  <img src="assets/img/blogs/img-1.jpg" alt="" class="img-fluid">
+                              </div>
+      
+                              <h2 class="entry-title">
+                                  DevOps with serverless Jenkins and AWS Cloud Development Kit (AWS CDK)
+                              </h2>
+      
+                           
+      
+                              <div class="entry-content">
+                                  <p>
+                                      The objective of this post is to walk you through how to set up a completely serverless Jenkins environment on AWS Fargate using AWS Cloud Development Kit (AWS CDK).
+                                  </p>
+      
+                                  <p>
+                                      Jenkins is a popular open-source automation server that provides hundreds of plugins to support building, testing, deploying, and automation. Jenkins uses a controller-agent architecture in which the controller is responsible for serving the web UI, stores the configurations and related data on disk, and delegates the jobs to the worker agents that run these jobs as their primary responsibility.
+                                  </p>
+      
+                                  <blockquote>
+                                      <p>
+                                          Amazon Elastic Container Service (Amazon ECS) using Fargate is a fully-managed container orchestration service that helps you easily deploy, manage, and scale containerized applications. It deeply integrates with the rest of the AWS platform to provide a secure and easy-to-use solution for running container workloads in the cloud and now on your infrastructure. Fargate is a serverless, pay-as-you-go compute engine that lets you focus on building applications without managing servers. Fargate is compatible with both Amazon ECS and Amazon Elastic Kubernetes Service (Amazon EKS).
+                                      </p>
+                                  </blockquote>
+      
+                                  <h2 class="entry-title">
+                                      Solution overview
+                                  </h2>
+      
+                                  <p>
+                                      This diagram shows AWS CDK and how it deploys using AWS CloudFormation to create the Elastic Load Balancer, AWS Fargate, and Amazon EFS
+                                  </p>
+      
+                                  <h3>You’ll be using the following:</h3>
+                                  <p>
+                                      <ul>
+                                          <li> The Jenkins controller URL backed by an Application Load Balancer (ALB).</li><br>
+                                          <li> You’ll be using your default Amazon Virtual Private Cloud (Amazon VPC) for this example.</li><br>
+                                          <li>The Jenkins controller runs as a service in Amazon ECS using Fargate as the launch type.<br><br> You’ll use Amazon Elastic File System (Amazon EFS) as the persistent backing store for<br><br> the Jenkins controller task.
+                                              The Jenkins controller and Amazon EFS are launched in private subnets.</li>
+                                      </ul>
+                                  </p>
+                                  <img src="assets/img/blogs/img-2.png" class="img-fluid" alt="">
+      
+                                  <h3>Prerequisites</h3>
+                                  <p>
+                                      For this post, you’ll utilize AWS CDK using TypeScript.Follow the guide on Getting Started for AWS CDK to:Get your local environment setup Bootstrap your development account
+                                  </p>
+      
+      
+      
+      
+                              </div>
+      
+      
+                          </article><!-- End blog entry -->
+      
+      
+      
+      
+      
+                      </div><!-- End sidebar -->
+      
+                  </div><!-- End blog sidebar -->
+      
+              </div>
+      
+              </div>
+          </section><!-- End Blog Single Section -->
+      
+          <!====================below is another article----------->
+      
+              <section id="blog" class="blog">
+                  <div class="container" data-aos="fade-up">
+      
+                      <div class="row">
+      
+                          <div class="col-lg-12 entries">
+      
+                              <article class="entry entry-single">
+      
+                                  <h2 class="entry-title">
+                                      Executing a cloud-to-cloud migration
+                                  </h2> <br>
+      
+                                  <div class="entry-img">
+                                      <img src="assets/img/blogs/img-3.png" alt="" class="img-fluid">
+                                  </div>
+      
+      
+      
+                                  
+                              
+      
+                                  <div class="entry-content">
+                                      <p>
+                                          Cloud-to-cloud migration is not for the faint-hearted. But after a business merger or acquisition it’s sometimes a necessary step.
+      
+                                          This post looks at our work for Zego, a provider of flexible insurance solutions for business vehicles. Zego has an established presence on AWS and following its acquisition of vehicle insurance telematics specialist Drivit, a cloud-to-cloud migration of Drivit’s Azure-hosted platform was initiated. Having all systems and applications on AWS was essential to maximise consistency and cohesion. However, as with any cloud-to-cloud migration, there were extreme technical complexities to contend with. We were appointed to handle the process.
+                                      </p>
+      
+                                      <p>
+                                          Moving tens of millions of datafiles from Azure to AWS
+                                      </p>
+      
+                                      <blockquote>
+                                          <p>
+                                              One specific challenge centred on Drivit’s use of Azure Blob to receive and process data about driver habits. As part of the migration, this aspect of the platform was rewritten to make use of AWS S3 uploads which simplified data flow. However, around 45TB of existing datafiles also had to be moved to S3 to enable more cost-effective lifecycle management. The average file size was less than 1MB, and the sheer volume – tens of millions – meant that common tools such as AWS Snowballs or Rclone were not suitable for the task.
+                                          </p>
+                                      </blockquote>
+      
+                                      <h2 class="entry-title">
+                                          A partitioning-based approach
+                                      </h2>
+      
+                                      <p>
+                                          Traditional data transportation tools scan the source location before migration, then store the inventory in memory. However, with so many datafiles to move, there was a risk that memory consumption would overwhelm the system, resulting in failure.
+                                      </p>
+      
+                                      <h3>We needed an alternative method for data discovery that could store the inventory outside of memory with minimal complexity.</h3>
+                                      <p>
+                                          Our initial solution involved a queue system which could scale to handle millions of files. As per the below architecture, we iterated over the Azure object store. Each datafile was published to the queue for the message to be collected, with the file move completed as an asynchronous process. Due to the long runtime of the object store scan, we used AWS Batch to run the ‘export_files.py’ process across the Fargate container platform.
+                                      </p>
+      
+      
+      
+                                      <blockquote>
+                                          <p>
+                                              This approach worked well in testing, but it was not fast enough in practice. Even with AWS Batch, the export_files.py process took many days to complete.
+      
+                                              The task was analogous to trying to find a name in a phone book which is not structured alphabetically. You can start at the front of the book and work through the list name by name, but it will take a long time. That’s because it’s a single threaded process. By its nature it’s limited to a single CPU core, so increasing resource has no effect. What we needed was a multi-threaded process.
+                                          </p>
+                                      </blockquote>
+                                      <h3>final solution</h3>
+      
+      
+                                      <p>Ultimately, we devised a multi-processing solution using data partitioning. Drivit’s file naming convention involved unique user IDs, so we partitioned the entire dataset using a simple alpha-numeric scheme with 62 partitions (26 upper case letters, 26 lower case and ten digits). Based on this, we extended the export_files to make use of Python threads to increase throughput. We also took the opportunity to add a filter step to remove files from the processing queue once they were migrated. This was architected as follows: </p>
+      
+                                      <img src="assets/img/blogs/img-4.png" class="img-fluid" alt="">
+      
+      
+                                      <p>
+                                          The export_files.py AWS Batch job pushes messages to ‘filter queue’ which is read by the export_worker.py Lambda function. This checks whether the file is already there, with the message dumped or moved to the primary queue accordingly. Finally, import_files.py Lambda moves the file into S3.
+                                      </p>
+      
+      
+                                      <h2 class="entry-title">Navigating cloud-to-cloud complexity</h2>
+                                      <p>Cloud-to-cloud migrations are notoriously difficult to execute. Challenges like those outlined here are common, and it can sometimes feel like there’s no viable solution. However, we have the advantage of many years’ experience handling complex cloud migrations. Our tenacity and pragmatism enabled Zego to find an effective way forward, resulting in full migration of historic Drivit data to AWS</p>
+      
+      
+      
+                                  </div>
+      
+      
+                              </article><!-- End blog entry -->
+      
+      
+      
+      
+      
+                          </div><!-- End sidebar -->
+      
+                      </div><!-- End blog sidebar -->
+      
+                  </div>
+      
+                  </div>
+              </section><!-- End Blog Single Section -->
+          
+
+
+  <!-- ======= Footer ======= -->
+
+  <footer id="footer">
+
+
+
+    <div class="footer-top">
+
+
+
+      <div class="container">
+
+
+
+        <div class="row justify-content-center">
+
+          <div class="col-lg-6">
+
+            <a href="#header" class="scrollto footer-logo"><img src="assets/img/hero-logo.png" alt=""></a>
+
+            <h3>A goal properly set is halfway reached</h3>
+                
+ <!--            
+
+            <p>Yes! I'm at skype Lets connect</p>
+
+            <p>Join my professional LinkedIn network of  8k+ followers</p>
+
+          </div>
+
+        </div>
+       
+
+         social media icons 
+          
+          <div class="social-links">
+
+          <a href="https://join.skype.com/invite/vwXHOoy9h8wZ" class="google-plus"><i class="bx bxl-skype"></i></a>
+
+          <a href="https://www.linkedin.com/in/mycareer-live/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+
+        </div>
+     -->
+
+
+      </div>
+
+    </div>
+
+
+
+    <div class="container footer-bottom clearfix">
+
+      <div class="copyright">
+
+        &copy; Copyright <strong><span>IT Master</span></strong> All Rights Reserved
+
+      </div>
+
+      <div class="credits">
+
+        <!-- All the links in the footer should remain intact. -->
+
+        <!-- You can delete the links only if you purchased the pro version. -->
+
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/knight-free-bootstrap-theme/ -->
+
+    
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+
+  <!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
