@@ -2056,13 +2056,7 @@ Yes, it's possible with us! Thousands of our candidates from different fields, w
 
 </section><!-- End Team Section -->
 
-
-
-    
-
-
-
-    <!-- ======= Contact Section ======= -->
+<!-- ======= Contact Section ======= -->
 
 
 
@@ -2090,8 +2084,10 @@ Yes, it's possible with us! Thousands of our candidates from different fields, w
 
           <div class="col-10 col-md-8 col-lg-8 ">
 
-            
             <form action="" method="post" name="contacts" role="form" class="php-email-form">
+              <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                    <input type="hidden" name="form-name" value="contact">
+
 
               <div class="row">
 
@@ -2136,7 +2132,6 @@ Yes, it's possible with us! Thousands of our candidates from different fields, w
               <div class="contact-span">
 
 
-
                 <span id="msg2"></span>
 
 
@@ -2160,6 +2155,12 @@ Yes, it's possible with us! Thousands of our candidates from different fields, w
       </div>
 
     </section><!-- End Contact Section -->
+
+    
+
+
+
+   
 
 
 
@@ -2358,164 +2359,6 @@ Yes, it's possible with us! Thousands of our candidates from different fields, w
   <!-- Template Main JS File -->
 
   <script src="assets/js/main.js"></script>
-
-
-
-
-
-  <!-- Join our community form script -->
-
-  
-
-  <script>
-
-    const scriptURL1 = 'https://script.google.com/macros/s/AKfycbxEYYDX6Oum5YL2Z-MzuDNKvJDIqqglNM41XEGqbT_lrCuudAkQZQXtA8UKITDtAEIT/exec'
-
-    const form = document.forms['subscribers ']
-
-    const msg1 = document.getElementById("msg1")
-
-
-
-    form.addEventListener('submit', e => {
-
-        e.preventDefault()
-
-        fetch(scriptURL1, {
-
-                method: 'POST',
-
-                body: new FormData(form)
-
-            })
-
-            .then(response => {
-
-                msg1.innerHTML = " Hooray..! Thanks for Subscribing! "
-
-                setTimeout(function() {
-
-                    msg1.innerHTML = ""
-
-                }, 20000)
-
-                form.reset()
-
-            })
-
-            .catch(error => console.error('Error!', error.message))
-
-    })
-
-</script>
-
-
-
-
-
-
-
-
-
-  <!-- contact form script -->
-
-
-
-<script>
-
-
-
-  const scriptURL2 = 'https://script.google.com/macros/s/AKfycbxl1fu9-f45pqx3WIHhJF5UXzFUgNqD7I5rBYk0fKfyEhIEQXggwnqzFdlr543ej8WE/exec'
-
-
-
-  const form2 = document.forms['contacts']
-
-
-
-  const msg2 = document.getElementById("msg2")
-
-
-
-  form2.addEventListener('submit', e => {
-
-
-
-  e.preventDefault()
-
-
-
-  
-
-
-
-          fetch(scriptURL2, {
-
-
-
-                    method: 'POST',
-
-
-
-                    body: new FormData(form2)
-
-
-
-                })
-
-
-
-                .then(response => {
-
-
-
-                    msg2.innerHTML = "Congrats! Your enquiry was sent successfully!"
-
-
-
-                    setTimeout(function() {
-
-
-
-                        msg2.innerHTML = ""
-
-
-
-                    }, 7000)
-
-
-
-                    form2.reset()
-
-
-
-                })
-
-
-
-                .catch(error => console.error('Error!', error.message))
-
-
-
-        })
-
-
-
-
-
-
-
-        
-
-
-
-</script>
-
-
-
-
-
-
 
 
 
